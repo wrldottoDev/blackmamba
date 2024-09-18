@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ),
+    url("img/fondoGod.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3; /* Asegura que el navbar esté por encima del contenido */
+}
+
+header .logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-bar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.nav-bar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.nav-bar a:hover::before {
+    width: 100%;
+}
+
+#hero h1 {
+    z-index: 1; /* Asegura que el texto esté detrás de la imagen */
+    color: white;
+    font-size: 8rem;
+    position: absolute;
+    top: 17%;
+}
+
+.overlay-img {
+    position: absolute;
+    z-index: 1;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: auto;
+}
+
+#info1 {
+    background-color: #552583;
+    color: white;
+    padding: 100px 20px;
+}
+
+#info1 .info1-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 200px; 
+}
+
+#info1 .img-container {
+    background-image: url(img/Kobe-Bryant-1.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px;
+}
+
+#info1 .texto-sobre {
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+#info1 .texto-sobre h2 {
+    font-size: 3rem;
+    color: #FDB927;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 
+        -1px -1px 0 #000, 
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000;
+}
+
+#info1 .texto-sobre p {
+    border: 3px solid #FDB927;
+    border-radius: 10px;
+    font-size: 1.5rem; 
+    line-height: 1.2;
+    padding: 20px;
+}
+
+#gallery {
+    background-color: #FDB927;
+    color: white;
+    padding: 100px 20px;
+}
+
+#gallery .gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* Alinea el texto a la izquierda */
+    gap: 200px; /* Espacio entre el texto y el video */
+    flex-direction: row-reverse; /* Invierte la dirección para alinear video a la derecha */
+}
+
+#gallery .video-container {
+    width: 50%;
+    max-width: 600px;
+}
+
+#gallery .texto-gallery {
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+#gallery .texto-gallery h2 {
+    font-size: 3rem;
+    color: #552583;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 
+        -1px -1px 0 #fff, 
+        1px -1px 0 #fff, 
+        -1px 1px 0 #fff, 
+        1px 1px 0 #fff;
+}
+
+#gallery .texto-gallery p {
+    border: 3px solid #552583;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    padding: 20px;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000, 
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000;
+}
+
+#mamba-4ever {
+    background-color: whitesmoke;
+    color: black;
+    padding: 100px 20px;
+}
+
+#mamba-4ever h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 100px;
+}
+
+#mamba-4ever p {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Media Queries para hacer responsivo */
+@media (max-width: 1200px) {
+    #info1 .info1-container, 
+    #gallery .gallery-container {
+        gap: 100px;
+    }
+
+    #hero h1 {
+        font-size: 6rem;
+    }
+
+    header {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    #info1 .info1-container, 
+    #gallery .gallery-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    #hero h1 {
+        font-size: 4rem;
+        top: 20%;
+    }
+
+    #hero .overlay-img {
+        width: 60%;
+    }
+
+    #info1 .texto-sobre h2, 
+    #gallery .texto-gallery h2 {
+        font-size: 2.5rem;
+    }
+
+    #info1 .texto-sobre p, 
+    #gallery .texto-gallery p {
+        font-size: 1.2rem;
+    }
+
+    #gallery .video-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    #hero .overlay-img {
+        width: 80%;
+    }
+
+    header .logo {
+        font-size: 24px;
+    }
+
+    .nav-bar a {
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    #info1 .texto-sobre h2, 
+    #gallery .texto-gallery h2 {
+        font-size: 2rem;
+    }
+
+    #info1 .texto-sobre p, 
+    #gallery .texto-gallery p {
+        font-size: 1rem;
+    }
+
+    #gallery .video-container {
+        width: 100%;
+    }
+
+    #mamba-4ever h1 {
+        font-size: 50px;
+    }
+
+    #mamba-4ever p {
+        font-size: 20px;
+    }
+}
